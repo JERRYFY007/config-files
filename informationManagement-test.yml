@@ -1,0 +1,56 @@
+server:
+  port: 8185
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: informationManagement
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://dev-vm-00:3306/dev1?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
+    username: test 
+    password: test
+    hikari:
+      maximum-pool-size: 3
+  session:
+    store-type: redis
+    redis: 
+      namespace: dataplatformtest
+  redis:
+    host: dev-vm-00
+    port: 6379
+  servlet: 
+    multipart: 
+      max-file-size: 100Mb
+      max-request-size: 100Mb
+eureka:
+  client:
+    registryFetchIntervalSeconds: 5
+    region: default
+    serviceUrl:
+      defaultZone:  http://localhost:8081/eureka/
+    enabled: true
+  instance:
+    prefer-ip-address: false
+    hostname: localhost
+logging:
+  level:
+    org:
+      springframework:
+        security: error
+upload:
+  path:
+    image: /home/jenkins/upload/image/
+    file: /home/jenkins/upload/file/
+security:
+  permit: false
+  authUser: root
+  authPwd: pwd
+
+mongodb:
+  database: metadataRepoDemo
+  uri: dev-vm-00:27017
+  username: root
+  password: dataPlatform

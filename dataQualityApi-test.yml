@@ -1,0 +1,64 @@
+server:
+  port: 8763
+
+spring:
+  application:
+    name: dataQualityApi
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://dev-vm-00:3306/dev1?autoReconnect=true&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
+    username: test
+    password: test
+  rabbitmq:
+    host: dev-vm-00 
+    port: 5672
+    username: guest
+    password: guest
+    virtualHost: dams
+    sqlEngineExchange: sqlEngine-exchange
+    dataQualityQueue: dataQuality-queue
+  session:
+    store-type: redis
+    redis:
+      namespace: dataplatformtest
+  redis:
+    host: dev-vm-00
+    port: 6379
+  servlet:
+    multipart:
+      max-file-size: 20Mb
+      max-request-size: 100Mb
+eureka:
+  client:
+    registryFetchIntervalSeconds: 100
+    region: default
+    serviceUrl:
+      defaultZone:  http://localhost:8081/eureka/
+    enabled: true
+  instance:
+    prefer-ip-address: false
+    hostname: localhost
+mongodb:
+  database: DAMSMD
+  uri: dev-vm-00:27017
+  username: hello
+  password: hello
+
+logging:
+  level:
+    org:
+      springframework:
+        security: debug
+
+security:
+  permit: true
+  authUser: root
+  authPwd: pwd
+
+dq:
+  connection:
+    timeout: 30
+

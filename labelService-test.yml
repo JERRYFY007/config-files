@@ -1,0 +1,56 @@
+eureka:
+  client:
+    registryFetchIntervalSeconds: 5
+    region: default
+    serviceUrl:
+      defaultZone:  http://localhost:8081/eureka/
+  instance:
+    preferIpAddress : false
+    hostname: localhost
+
+security:
+  permit: false
+  authUser: root
+  authPwd: pwd
+spring:
+  application:
+    name: labelService
+  session:
+    store-type: redis
+    redis:
+      namespace: dataplatformtest
+  redis:
+    host: dev-vm-00
+    port: 6379
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://dev-vm-00:3306/dev1?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
+    username: test
+    password: test 
+    initialization-mode: always
+    continue-on-error: true
+    hikari:
+      maximum-pool-size: 3
+  rabbitmq:
+    host: dev-vm-00
+    port: 5672
+    username: guest
+    password: guest
+    virtualHost: dams
+    sqlEngineExchange: sqlEngine-exchange
+    labelQueue: label-queue
+
+server:
+  port: 8055
+
+logging:
+  level:
+    org:
+      springframework:
+        security: debug
+      hibernate:
+        SQL: debug
+        type: trace
+
