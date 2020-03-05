@@ -11,8 +11,11 @@ spring:
   redis:
     host: dev-vm-00
     port: 6379
+  jpa:
+    hibernate:
+      ddl-auto: update
   datasource:
-    url: jdbc:mysql://dev-vm-00:3306/dev1?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://dev-vm-00:3306/szrcb?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
     username: test
     password: test
     hikari:
@@ -36,7 +39,7 @@ zuul:
 
 logging:
   level:
-    org.springframework.security: DEBUG
+    org.springframework.security: INFO
 
 ribbon:
   ReadTimeout: 60000

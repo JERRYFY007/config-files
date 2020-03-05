@@ -7,7 +7,7 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:mysql://dev-vm-00:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://dev-vm-00:3306/szrcb?autoReconnect=true&useUnicode=true&characterEncoding=utf-8
     username: test
     password: test
     initialization-mode: always
@@ -26,10 +26,10 @@ eureka:
     registryFetchIntervalSeconds: 5
     region: default
     serviceUrl:
-      defaultZone:  http://localhost:8081/eureka/
+      defaultZone: http://dev-vm-21:8081/eureka/
   instance:
     preferIpAddress : false
-    hostname: localhost
+    hostname: dev-vm-21
 logging:
   level:
     org:
@@ -42,4 +42,7 @@ security:
 
 mstr:
   url:
-    prefix: http://192.168.0.40:8080/MicroStrategy/servlet/mstrWeb?evt=3187&src=mstrWeb.3187&parentFolderId=EFCEF27446188E0176438CACD04A79FE&Server=DESKTOP-L6PPDEH&Project=MicroStrategy%20Tutorial
+    prefix: http://139.198.126.155:6080/MicroStrategy/servlet/
+    prefix1: http://139.198.126.155:6080/MicroStrategy/servlet/
+    report: mstrWeb?evt=3187&src=mstrWeb.3187&parentFolderId=8D67909211D3E4981000E787EC6DE8A4&Server=1A5EG1P5ANCBGIX&Project=MicroStrategy%20Tutorial
+    init: taskProc?taskId=createUserAndDSTask&taskEnv=xhr&taskContentType=json

@@ -1,9 +1,9 @@
 mongodb:
-  database: dataCatalogDemo
+  database: dataCatalogSZRCB
   uri: dev-vm-00:27017
   username: root
   password: dataPlatform
-
+  maxConnectionIdleTime: 600000
 essearch:
   host: dev-vm-00
   port: 9300
@@ -17,7 +17,7 @@ eureka:
       defaultZone: http://localhost:8081/eureka/
   instance:
     preferIpAddress: false
-    hostname: localhost
+    hostname: dev-vm-21 
 
 spring:
   application:
@@ -30,7 +30,7 @@ spring:
     host: dev-vm-00
     port: 6379
   datasource:
-    url: jdbc:mysql://dev-vm-00:3306/dev1?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://dev-vm-00:3306/szrcb?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
     username: test
     password: test
     hikari:
@@ -40,7 +40,7 @@ spring:
     port: 5672
     username: guest
     password: guest
-    virtualHost: demo
+    virtualHost: szrcb
     exchange: metadata-exchange
     dataCatalogQueue: dataCatalog-mdqueue
     sqlEngineExchange: sqlEngine-exchange
@@ -62,3 +62,9 @@ tableModel:
   openCache: true
   auditKey: audit
   sampleQueueSize: 5
+logging:
+  level:
+    org:
+      springframework:
+        security: debug
+

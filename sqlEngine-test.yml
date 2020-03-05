@@ -7,7 +7,7 @@ eureka:
     enabled: true
   instance:
     prefer-ip-address: false
-    hostname: localhost
+    hostname: dev-vm-21 
 
 spring:
   application:
@@ -22,7 +22,7 @@ spring:
     host: dev-vm-00
     port: 6379
   datasource:
-    url: jdbc:mysql://dev-vm-00:3306/dev1?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://dev-vm-00:3306/szrcb?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
     username: test
     password: test
     hikari:
@@ -32,7 +32,7 @@ spring:
     port: 5672
     username: guest
     password: guest
-    virtualHost: demo
+    virtualHost: szrcb
     sqlEngineExchange: sqlEngine-exchange
     sqlEngineQueue: sqlEngine-queue
 
@@ -63,4 +63,4 @@ feign:
 
 self:
   config:
-    output: helloworld
+    output: 192.168.0.212,50201

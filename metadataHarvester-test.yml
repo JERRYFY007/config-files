@@ -2,6 +2,11 @@ server:
   port: 8085
   servlet:
     context-path: /
+mongodb:
+  database: metadataRepoSZRCB
+  uri: dev-vm-00:27017
+  username: root
+  password: dataPlatform
 spring:
   application:
     name: metadataHarvester
@@ -9,11 +14,30 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:mysql://dev-vm-00:3306/dev1?autoReconnect=true&useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://dev-vm-00:3306/szrcb?autoReconnect=true&useUnicode=true&characterEncoding=utf-8
     username: test
     password: test
     hikari:
       maximum-pool-size: 3
+  servlet:
+    multipart:
+      max-file-size: 20Mb
+      max-request-size: 100Mb
+  mail:
+    host: smtp.163.com
+    port: 25
+    protocol: smtp
+    username: cr_gu@163.com
+    password: ghy0914
+    default-encoding: UTF-8
+    to: lvjj@keymobile.com.cn
+    sendFlag: false
+    properties:
+      mail:
+        auth: true
+        starttls:
+           enable: true
+           required: true
   session:
     store-type: redis
     redis: 
@@ -30,7 +54,7 @@ eureka:
     enabled: true
   instance:
     prefer-ip-address: false
-    hostname: localhost 
+    hostname: dev-vm-21  
 logging:
   level:
     org:
