@@ -8,7 +8,7 @@ eureka:
         defaultZone: http://localhost:8081/eureka/
   instance:
     prefer-ip-address: false
-    hostname: dev-vm-21 
+    hostname: localhost
 
 spring:
   application:
@@ -18,15 +18,15 @@ spring:
     redis:
       namespace: dataplatformtest
   redis:
-    host: dev-vm-00
+    host: localhost
     port: 6379
   jpa:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:mysql://dev-vm-00:3306/szrcb?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
-    username: test
-    password: test
+    url: jdbc:mysql://localhost:3306/szrcb?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
     #initialization-mode: always
     #continue-on-error: true
     hikari:
