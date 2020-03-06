@@ -5,14 +5,14 @@ security:
   permit: false
 mongodb:
   database: metadataRepoSZRCB
-  uri: dev-vm-00:27017
+  uri: localhost:27017
   username: root
   password: dataPlatform
   options: ?AutoConnectRetry=true&sslEnabled=true&socketKeepAlive=true
   lower_case_metadata_names: false
 
 essearch:
-      host: dev-vm-00
+      host: localhost
       port: 9300
       cluster: dataSharing
       logIndexName: metadata_log #logstash 注意不能识别大写
@@ -25,7 +25,7 @@ eureka:
         defaultZone:  http://localhost:8081/eureka/
   instance:
      preferIpAddress : false
-     hostname: dev-vm-21
+     hostname: localhost
 
 spring:
   application:
@@ -35,10 +35,10 @@ spring:
     redis:
       namespace: dataplatformtest
   redis:
-    host: dev-vm-00
+    host: localhost
     port: 6379
   rabbitmq:
-      host: dev-vm-00
+      host: localhost
       port: 5672
       username: guest
       password: guest
@@ -46,9 +46,9 @@ spring:
       exchange: metadata-exchange
       dataCatalogQueue: dataCatalog-mdqueue
   datasource:
-    url: jdbc:mysql://dev-vm-00:3306/szrcb?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
-    username: test
-    password: test
+    url: jdbc:mysql://localhost:3306/szrcb?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
     hikari:
       maximum-pool-size: 3
   mail:
