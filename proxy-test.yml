@@ -9,7 +9,7 @@ spring:
     redis:
       namespace: dataplatformtest
   redis:
-    host: dev-vm-00
+    host: localhost
     port: 6379
   jpa:
     hibernate:
