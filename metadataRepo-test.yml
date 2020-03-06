@@ -6,8 +6,6 @@ security:
 mongodb:
   database: metadataRepoSZRCB
   uri: localhost:27017
-  username:
-  password:
   options: ?AutoConnectRetry=true&sslEnabled=true&socketKeepAlive=true
   lower_case_metadata_names: false
 
