@@ -15,9 +15,9 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:mysql://dev-vm-00:3306/szrcb?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
-    username: test
-    password: test
+    url: jdbc:mysql://localhost:3306/szrcb?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
     hikari:
       maximum-pool-size: 5
   servlet:
@@ -46,4 +46,4 @@ ribbon:
   ConnectTimeout: 60000
 
 redirect-url:
-  system-management: http://192.168.0.212:8089/views/login.html
+  system-management: http://localhost:8089/views/login.html
