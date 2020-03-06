@@ -1,8 +1,6 @@
 mongodb:
   database: dataCatalogSZRCB
   uri: localhost:27017
-  username: root
-  password: dataPlatform
   maxConnectionIdleTime: 600000
 essearch:
   host: localhost
