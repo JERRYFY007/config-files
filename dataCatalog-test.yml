@@ -1,11 +1,11 @@
 mongodb:
   database: dataCatalogSZRCB
-  uri: dev-vm-00:27017
+  uri: localhost:27017
   username: root
   password: dataPlatform
   maxConnectionIdleTime: 600000
 essearch:
-  host: dev-vm-00
+  host: localhost
   port: 9300
   cluster: dataSharing
 
@@ -17,7 +17,7 @@ eureka:
       defaultZone: http://localhost:8081/eureka/
   instance:
     preferIpAddress: false
-    hostname: dev-vm-21 
+    hostname: localhost
 
 spring:
   application:
@@ -27,16 +27,16 @@ spring:
     redis:
       namespace: dataplatformtest
   redis:
-    host: dev-vm-00
+    host: localhost
     port: 6379
   datasource:
-    url: jdbc:mysql://dev-vm-00:3306/szrcb?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
-    username: test
-    password: test
+    url: jdbc:mysql://localhost:3306/szrcb?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
     hikari:
       maximum-pool-size: 3
   rabbitmq:
-    host: dev-vm-00
+    host: localhost
     port: 5672
     username: guest
     password: guest
